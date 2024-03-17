@@ -1,0 +1,13 @@
+#!/bin/bash
+# Convert argument to uppercase
+drive="${1,,}"
+if [ $# -eq 0 ]; then   
+# Check if an argument is provided                
+    echo "Usage: disk [drive_letter]"
+elif [ ! -d "/mnt/$drive/" ]; then
+# Check if the drive letter is valid
+    echo "Error: Drive $drive is not mounted."
+else 
+# Change directory to the specified disk
+	cd /mnt/$drive/
+fi
